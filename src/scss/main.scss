@@ -1,8 +1,13 @@
-@import 'core/variables';
-@import 'core/reset';
-@import 'components/code';
-@import 'components/links';
-@import 'layout/page';
-@import 'layout/header';
-@import 'layout/footer';
-@import 'pages/index';
+@import "core/normalize";
+@import "core/reset";
+@import "core/variables";
+@import "core/global";
+
+@import "layout/header";
+@import "layout/footer";
+@import "layout/main-landing";
+@import "layout/main-preview";
+@import "layout/main-form";
+@import "layout/form/design";
+@import "layout/form/complete";
+@import "layout/form/share";
