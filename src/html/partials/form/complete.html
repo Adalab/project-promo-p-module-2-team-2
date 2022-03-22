@@ -1,10 +1,20 @@
+<!--<div class="grayline"></div>-->
+
+
 <fieldset class="completeBox">
-  <div class="legend">
-    <!--A lo mejor legend, valorar-->
-    <icon class="legend__keyboard"><i class="fa-regular fa-keyboard"></i></icon>
-    <h2 class="legend__title">Rellena</h2>
-    <icon class="legend__up"><i class="fa-solid fa-chevron-up"></i></icon>
-  </div>
+
+    <!--SECTION LEGEND-->
+
+  <legend class="completeBox__legend">
+    <icon class="completeBox__keyboard"><i class="fa-regular fa-keyboard"></i></icon>
+    <!--<div class="legend__separation"> Me gustaría para poder ajustar según pantallas-->
+    <h2 class="completeBox__title">Rellena</h2>
+    <img class="completeBox__up"><i class="fa-solid fa-chevron-up"></i></img>
+<!--</div>-->
+  </legend>
+
+
+  <!--SECTION INPUTS-->
 
   <label class="completeBox__label" for="name">Nombre completo</label>
   <input
@@ -23,6 +33,7 @@
     placeholder="Ej: Front-end unicorn"
   />
   <!--<label for="image">Imagen de perfil /Falta esta parte, ver librería</label>-->
+
   <label class="completeBox__label" for="email">Email</label>
   <input
     class="completeBox__input"
