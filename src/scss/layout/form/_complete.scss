@@ -1,0 +1,67 @@
+/*.grayline {
+  border: 1rem solid $col_grayline;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}*/
+
+.complete {
+  border-color: transparent; /*quito bordes que da el fieldset por defecto*/
+  display: flex;
+  flex-direction: column;
+
+  /*SECTION LEGEND*/
+
+  &__legend {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20rem;
+    padding-top: 20rem;
+  }
+
+  &__keyboard {
+    font-size: 18rem;
+    width: 20rem;
+    color: $col_dull_orange;
+    margin-right: 10rem;
+  }
+
+  /*&__separation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }*/
+
+  &__title {
+    font-family: $font_open;
+    font-weight: $font_w_semibold;
+    font-size: 18rem;
+    color: $col_gunmetal;
+    text-transform: uppercase;
+    width: 320rem; /*para poder mover la flecha al lado*/
+  }
+
+  &__up {
+    font-size: 18rem;
+  }
+
+  /*SECTION INPUTS*/
+
+  &__label {
+    font-family: $font_open;
+    font-size: 14rem;
+    color: $col_dark_green_blue;
+    margin-bottom: 7rem; /*podriamos dar 10?*/
+  }
+
+  &__input {
+    border: 1rem solid $col_hospital_green;
+    padding: 8rem;
+    margin-bottom: 20rem;
+    height: 30rem;
+    font-family: $font_open;
+    font-size: 14rem;
+    /*cambiar color borde input cuando escribimos?*/
+  }
+}
+
+/*Valorar dejar solo clase complete y no complete?*/
