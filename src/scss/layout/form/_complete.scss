@@ -4,7 +4,7 @@
   margin-bottom: 10rem;
 }*/
 
-.completeBox {
+.complete {
   border-color: transparent; /*quito bordes que da el fieldset por defecto*/
   display: flex;
   flex-direction: column;
@@ -64,4 +64,4 @@
   }
 }
 
-/*Valorar dejar solo clase complete y no completeBox?*/
+/*Valorar dejar solo clase complete y no complete?*/
