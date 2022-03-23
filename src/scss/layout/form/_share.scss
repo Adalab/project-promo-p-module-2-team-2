@@ -1,54 +1,56 @@
-.fieldset {
+.share {
   border-color: transparent;
   display: flex;
   flex-direction: column;
+
+  &__legend {
+    display: flex;
+    flex-direction: row;
+    gap: 12rem;
+    margin-bottom: 30rem;
+    text-transform: uppercase;
+    font-family: $font_open;
+    font-weight: $font_w_semibold;
+    font-size: 18rem;
+    color: $col_gunmetal;
+  }
 }
 
-.fieldset__legend {
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
-  color: #54585a;
-  text-transform: uppercase;
-  font-size: 18px;
-  margin-bottom: 30px;
+.share__nodes {
+  color: $col_dull_orange;
 }
 
-.fa-share-nodes {
-  color: #e17334;
-}
+/*.share__up {
+  margin-left: 120rem;
+}*/
 
-.fa-chevron-up {
-  margin-left: 120px;
-}
-
-.fieldset__button {
-  width: 199px;
-  height: 50px;
-  color: #ffffff;
+.share__button {
+  width: 199rem;
+  height: 50rem;
+  color: $col_white_four;
   font-family: OpenSans;
-  font-size: 18px;
+  font-size: 18rem;
   font-weight: 600;
   text-transform: uppercase;
-  border-radius: 12px;
+  border-radius: 12rem;
   border-color: #ffffff;
   background-color: #d5d5d5;
-  margin-left: 30px;
-  margin-bottom: 50px;
+  margin-left: 30rem;
+  margin-bottom: 50rem;
 }
 
 .fa-address-card {
-  margin-right: 10px;
+  margin-right: 10rem;
 }
 
-.fieldset__title {
-  color: #54585a;
-  font-size: 18px;
+.share__title {
+  color: $col_gunmetal;
+  font-size: 18rem;
   font-weight: 600;
   text-align: center;
 }
 
-.fieldset__link {
+.share__link {
   display: flex;
   justify-content: center;
   text-decoration: none;
@@ -57,7 +59,7 @@
   margin-bottom: 12px;
 }
 
-.fieldset__button--in {
+.share__button--in {
   width: 181px;
   height: 30px;
   border-radius: 3px;
