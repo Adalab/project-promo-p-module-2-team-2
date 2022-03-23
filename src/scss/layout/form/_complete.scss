@@ -1,10 +1,13 @@
 .complete {
-  border-color: transparent; /*quito bordes que da el fieldset por defecto*/
+  border-color: transparent;
   display: flex;
   flex-direction: column;
-  border-bottom: 1rem solid $col_grayline;
-  margin-top: 30rem;
-  margin-bottom: 10rem;
+
+  .grayline {
+    border-bottom: 1rem solid $col_grayline;
+    margin-top: 30rem;
+    margin-bottom: 10rem;
+  }
 
   /*SECTION LEGEND*/
 
@@ -13,11 +16,16 @@
     flex-direction: row;
     margin-bottom: 20rem;
     padding-top: 20rem;
+    background-color: pink;
   }
 
   &__keyboard {
     font-size: 18rem;
     width: 20rem;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: $col_dull_orange;
     margin-right: 10rem;
   }
@@ -34,7 +42,6 @@
     font-size: 18rem;
     color: $col_gunmetal;
     text-transform: uppercase;
-    width: 320rem; /*para poder mover la flecha al lado*/
   }
 
   &__up {
@@ -47,7 +54,7 @@
     font-family: $font_open;
     font-size: 14rem;
     color: $col_dark_green_blue;
-    margin-bottom: 7rem; /*podriamos dar 10?*/
+    margin-bottom: 10rem;
   }
 
   &__input {
@@ -57,6 +64,5 @@
     height: 30rem;
     font-family: $font_open;
     font-size: 14rem;
-    /*cambiar color borde input cuando escribimos?*/
   }
 }

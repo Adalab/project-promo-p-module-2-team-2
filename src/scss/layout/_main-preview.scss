@@ -1,14 +1,14 @@
-.main-preview-wrapper {
-  width: 240rem;
-}
-
 .main-preview {
-  height: 500rem;
   background: linear-gradient(to bottom, #bfcdd0, #dde9ed);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+
+  &-wrapper {
+    width: 240rem;
+  }
 
   &__button {
     text-align: left;
