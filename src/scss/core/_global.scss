@@ -29,3 +29,19 @@
   line-height: normal;
   color: $col_brownish_grey_05;
 }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 245, 245, 1) 0%,
+    rgba(255, 255, 255, 1) 5%,
+    rgba(255, 255, 255, 1) 100%
+  );
+
+  @media all and (min-width: $break_point_tablet) {
+    flex-direction: row-reverse;
+  }
+}
