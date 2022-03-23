@@ -1,13 +1,16 @@
+/*.grayline {
+  border-bottom: 1rem solid $col_grayline;
+  margin-top: 30rem;
+  margin-bottom: 10rem;
+}*/
+
 .complete {
   border-color: transparent;
   display: flex;
   flex-direction: column;
-
-  .grayline {
-    border-bottom: 1rem solid $col_grayline;
-    margin-top: 30rem;
-    margin-bottom: 10rem;
-  }
+  border-bottom: 1rem solid $col_grayline;
+  margin-top: 30rem;
+  margin-bottom: 10rem;
 
   /*SECTION LEGEND*/
 
@@ -16,6 +19,7 @@
     flex-direction: row;
     margin-bottom: 20rem;
     padding-top: 20rem;
+    width: 100%;
     background-color: pink;
   }
 
@@ -28,13 +32,8 @@
     justify-content: center;
     color: $col_dull_orange;
     margin-right: 10rem;
+    background-color: red;
   }
-
-  /*&__separation {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }*/
 
   &__title {
     font-family: $font_open;
@@ -42,13 +41,23 @@
     font-size: 18rem;
     color: $col_gunmetal;
     text-transform: uppercase;
+    background-color: yellow;
+    width: 100%;
   }
 
   &__up {
     font-size: 18rem;
+    height: auto;
+    background-color: purple;
+    margin-left: 0;
   }
 
   /*SECTION INPUTS*/
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
 
   &__label {
     font-family: $font_open;
