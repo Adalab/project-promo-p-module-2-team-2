@@ -1,0 +1,74 @@
+.fieldset {
+  border-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldset__legend {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  color: #54585a;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.fa-share-nodes {
+  color: #e17334;
+}
+
+.fa-chevron-up {
+  margin-left: 120px;
+}
+
+.fieldset__button {
+  width: 199px;
+  height: 50px;
+  color: #ffffff;
+  font-family: OpenSans;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 12px;
+  border-color: #ffffff;
+  background-color: #d5d5d5;
+  margin-left: 30px;
+  margin-bottom: 50px;
+}
+
+.fa-address-card {
+  margin-right: 10px;
+}
+
+.fieldset__title {
+  color: #54585a;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.fieldset__link {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: #e17334;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.fieldset__button--in {
+  width: 181px;
+  height: 30px;
+  border-radius: 3px;
+  background-color: #00a0f5;
+  font-family: OpenSans;
+  font-size: 14px;
+  color: #ffffff;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: 50px;
+}
+
+//tengo que afinar varias cosas y usar las variables por ejemplo...
