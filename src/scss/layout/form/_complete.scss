@@ -1,13 +1,10 @@
-/*.grayline {
-  border: 1rem solid $col_grayline;
-  margin-top: 10rem;
-  margin-bottom: 10rem;
-}*/
-
 .complete {
   border-color: transparent; /*quito bordes que da el fieldset por defecto*/
   display: flex;
   flex-direction: column;
+  border-bottom: 1rem solid $col_grayline;
+  margin-top: 30rem;
+  margin-bottom: 10rem;
 
   /*SECTION LEGEND*/
 
@@ -63,5 +60,3 @@
     /*cambiar color borde input cuando escribimos?*/
   }
 }
-
-/*Valorar dejar solo clase complete y no complete?*/
