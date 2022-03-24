@@ -2,39 +2,61 @@
   <!------------SECTION LEGEND------------------->
 
   <legend class="design__legend">
-    <i class="fa-light fa-object-ungroup design__square"></i>
+    <i class="fa-regular fa-object-ungroup design__square"></i>
     <h2 class="design__title">Diseña</h2>
     <i class="design__up fa-solid fa-chevron-up"></i>
   </legend>
 
-  <!------------SECCION RADIO-------->
+  <!------------SECTION COLOURS-------->
 
-  <p>Colores</p>
+  <div class="design__container">
+    <p class="design__subtitle">Colores</p>
 
-  <!--Input y primer rectángulo de colores-->
-  <input type="radio" id="firstColour" name="firstColour" value="firstColour" />
-  <div class="design__container">
-    <div class="design__rectangle1"></div>
-    <div class="design__rectangle2"></div>
-    <div class="design__rectangle3"></div>
-  </div>
-  <!--Input y segundo rectángulo de colores-->
-  <input
-    type="radio"
-    id="secondColor"
-    name="secondColour"
-    value="secondColour"
-  />
-  <div class="design__container">
-    <div class="design__rectangle4"></div>
-    <div class="design__rectangle5"></div>
-    <div class="design__rectangle6"></div>
-  </div>
-  <!--Input y tercer rectángulo de colores-->
-  <input type="radio" id="thirdColour" name="thirdColour" value="thirdColour" />
-  <div class="design__container">
-    <div class="design__rectangle7"></div>
-    <div class="design__rectangle8"></div>
-    <div class="design__rectangle9"></div>
+    <div class="design__options">
+      <!--Option 1-->
+
+      <div class="design__options--colour">
+        <input
+          class="design__circle"
+          type="radio"
+          id="firstColour"
+          name="firstColour"
+          value="firstColour"
+        />
+        <div class="design__colour design__colour--1"></div>
+        <div class="design__colour design__colour--2"></div>
+        <div class="design__colour design__colour--3"></div>
+      </div>
+
+      <!--Option 2-->
+
+      <div class="design__options--colour">
+        <input
+          class="design__circle"
+          type="radio"
+          id="secondColour"
+          name="secondColour"
+          value="secondColour"
+        />
+        <div class="design__colour design__colour--4"></div>
+        <div class="design__colour design__colour--5"></div>
+        <div class="design__colour design__colour--6"></div>
+      </div>
+
+      <!--Option 3-->
+
+      <div class="design__options--colour">
+        <input
+          class="design__circle"
+          type="radio"
+          id="thirdColour"
+          name="thirdColour"
+          value="thirdColour"
+        />
+        <div class="design__colour design__colour--7"></div>
+        <div class="design__colour design__colour--8"></div>
+        <div class="design__colour design__colour--9"></div>
+      </div>
+    </div>
   </div>
 </fieldset>
