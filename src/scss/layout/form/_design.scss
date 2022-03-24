@@ -1,0 +1,44 @@
+.design {
+  border-color: transparent;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1rem solid $col_grayline;
+  margin-top: 30rem;
+  margin-bottom: 10rem;
+
+  /* ----------SECTION LEGEND--------*/
+
+  &__legend {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20rem;
+    padding-top: 20rem;
+    width: 100%;
+  }
+
+  &__square {
+    font-size: 18rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $col_dull_orange;
+    margin-right: 10rem;
+  }
+
+  &__title {
+    font-family: $font_open;
+    font-weight: $font_w_semibold;
+    font-size: 18rem;
+    color: $col_gunmetal;
+    text-transform: uppercase;
+    width: 100%;
+  }
+
+  &__up {
+    font-size: 18rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $col_gunmetal;
+  }
+}
