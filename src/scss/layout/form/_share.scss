@@ -7,70 +7,93 @@
     display: flex;
     flex-direction: row;
     gap: 12rem;
-    margin-bottom: 30rem;
+    margin: 5rem 0 30rem 0;
     text-transform: uppercase;
     font-family: $font_open;
     font-weight: $font_w_semibold;
     font-size: 18rem;
     color: $col_gunmetal;
   }
+
+  &__nodes {
+    display: flex;
+    align-items: center;
+    color: $col_dull_orange;
+    font-size: 18rem;
+    font-weight: $font_w_semibold;
+    width: 16rem;
+    height: 18rem;
+    margin-top: 2rem;
+  }
+
+  &__up {
+    margin-left: 120rem;
+    align-items: center;
+  }
+
+  &__button {
+    width: 199rem;
+    height: 50rem;
+    margin-left: 40rem;
+    margin-bottom: 50rem;
+    color: $col_white_four;
+    font-family: $font_open;
+    font-weight: $font_w_semibold;
+    font-size: 18rem;
+    text-transform: uppercase;
+    border-radius: 12rem;
+    border-color: $col_white;
+    background-color: $col_white_five;
+  }
+
+  &__card {
+    margin-right: 10rem;
+  }
+
+  &__div {
+    border-top: 1rem;
+    margin-bottom: 20rem;
+    border-top: 1rem solid $col_grayline;
+    border-bottom: 1rem solid $col_grayline;
+  }
+
+  &__title {
+    color: $col_gunmetal;
+    font-family: $font_open;
+    font-weight: $font_w_semibold;
+    font-size: 18rem;
+    text-align: center;
+    margin: 20rem 0 5rem 0;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: $col_dull_orange;
+    font-family: font_open;
+    font-weight: $font_w_semibold;
+    font-size: 12rem;
+    margin-bottom: 12rem;
+  }
+
+  &__button--in {
+    width: 181rem;
+    height: 30rem;
+    border-radius: 3rem;
+    background-color: $col_azure;
+    font-family: OpenSans;
+    font-size: 12rem;
+    color: $col_white_four;
+    display: flex;
+    gap: 10rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 35rem 50rem;
+  }
+
+  &share__twi {
+    width: 20rem;
+    height: 20rem;
+  }
 }
-
-.share__nodes {
-  color: $col_dull_orange;
-}
-
-/*.share__up {
-  margin-left: 120rem;
-}*/
-
-.share__button {
-  width: 199rem;
-  height: 50rem;
-  color: $col_white_four;
-  font-family: OpenSans;
-  font-size: 18rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  border-radius: 12rem;
-  border-color: #ffffff;
-  background-color: #d5d5d5;
-  margin-left: 30rem;
-  margin-bottom: 50rem;
-}
-
-.fa-address-card {
-  margin-right: 10rem;
-}
-
-.share__title {
-  color: $col_gunmetal;
-  font-size: 18rem;
-  font-weight: 600;
-  text-align: center;
-}
-
-.share__link {
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-  color: #e17334;
-  font-size: 12px;
-  margin-bottom: 12px;
-}
-
-.share__button--in {
-  width: 181px;
-  height: 30px;
-  border-radius: 3px;
-  background-color: #00a0f5;
-  font-family: OpenSans;
-  font-size: 14px;
-  color: #ffffff;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-left: 50px;
-}
-
-//tengo que afinar varias cosas y usar las variables por ejemplo...
