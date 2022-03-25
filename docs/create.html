@@ -76,7 +76,7 @@
         <fieldset class="design">
           <!------------SECTION LEGEND------------------->
 
-          <legend class="design__legend">
+          <legend class="design__legend js_design_legend" id="designLegend">
             <i class="fa-regular fa-object-ungroup design__square"></i>
             <h2 class="design__title">Diseña</h2>
             <i class="design__up fa-solid fa-chevron-up"></i>
@@ -84,7 +84,7 @@
 
           <!------------SECTION COLOURS-------->
 
-          <div class="design__container">
+          <div class="design__container js_design_form">
             <p class="design__subtitle">Colores</p>
 
             <div class="design__options">
@@ -95,7 +95,7 @@
                   class="design__circle"
                   type="radio"
                   id="firstColour"
-                  name="firstColour"
+                  name="colourPalette"
                   value="firstColour"
                 />
                 <div class="design__colour design__colour--1"></div>
@@ -110,7 +110,7 @@
                   class="design__circle"
                   type="radio"
                   id="secondColour"
-                  name="secondColour"
+                  name="colourPalette"
                   value="secondColour"
                 />
                 <div class="design__colour design__colour--4"></div>
@@ -125,7 +125,7 @@
                   class="design__circle"
                   type="radio"
                   id="thirdColour"
-                  name="thirdColour"
+                  name="colourPalette"
                   value="thirdColour"
                 />
                 <div class="design__colour design__colour--7"></div>
@@ -139,7 +139,7 @@
         <fieldset class="complete">
           <!------------SECTION LEGEND------------------->
 
-          <legend class="complete__legend">
+          <legend class="complete__legend js_complete_legend" id="completeLegend">
             <i class="complete__keyboard fa-regular fa-keyboard"></i>
             <h2 class="complete__title">Rellena</h2>
             <i class="complete__up fa-solid fa-chevron-up"></i>
@@ -147,7 +147,7 @@
 
           <!----------------SECTION INPUTS------------------>
 
-          <div class="complete__form">
+          <div class="complete__form js_complete_form">
             <label class="complete__label" for="name">Nombre completo</label>
             <input
               class="complete__input"
@@ -215,19 +215,33 @@
         </fieldset>
 
         <fieldset class="share">
-            <div> 
-            <legend class="share__legend"><i class="fa-solid fa-share-nodes share__nodes"></i></i>Comparte<i class="fa-solid fa-chevron-up share__up"></i></legend>
+          <legend class="share__legend js_share_legend" id="shareLegend">
+            <i class="share__nodes fa-solid fa-share-nodes"></i>
+            <h2 class="share__title">Comparte</h2>
+            <i class="share__up fa-solid fa-chevron-up"></i>
+          </legend>
 
-            <button class="share__button"><i class="fa-solid fa-address-card share__card"></i>Crear tarjeta</button>
-            </div>
+          <div class="share__div js_share_form">
+            <button class="share__button">
+              <i class="fa-solid fa-address-card share__card"></i>Crear tarjeta
+            </button>
 
-            <div class=share__div>
-              <h3 class="share__title">La tarjeta ha sido creada</h3>
-              <a class="share__link" href="ttps://awesome-profile-card.com?id=A456DF0001">ttps://awesome-profile-card.com?id=A456DF0001</a>
-             <button class="share__button--in"><i class="fa-brands fa-twitter share__twi"></i>Compartir en twitter</button>
+            <div class="share__div--title">
+              <h3 class="share__title--done">La tarjeta ha sido creada</h3>
+
+              <a
+                class="share__link"
+                href="ttps://awesome-profile-card.com?id=A456DF0001"
+              >
+                <small>ttps://awesome-profile-card.com?id=A456DF0001</small></a
+              >
             </div>
-         
-          </fieldset>
+            <button class="share__button--in">
+              <i class="fa-brands fa-twitter share__twi"></i>Compartir en twitter
+            </button>
+          </div>
+        </fieldset>
+
       </form>
 
     </main>
