@@ -18,23 +18,23 @@ const shareForm = document.querySelector ('.js_share_form');
 //
 function openForm (legendId) {
   if (legendId ==='completeLegend'){
-  completeForm.classList.toggle('collapsed');
-  designForm.classList.add('collapsed');
-  shareForm.classList.add('collapsed');
-}
+    completeForm.classList.toggle('collapsed');
+    designForm.classList.add('collapsed');
+    shareForm.classList.add('collapsed');
+  }
 
-if (legendId ==='designLegend'){
+  if (legendId ==='designLegend'){
     designForm.classList.toggle('collapsed');
     completeForm.classList.add('collapsed');
     shareForm.classList.add('collapsed');
   }
-  
+
   if (legendId ==='shareLegend'){
     shareForm.classList.toggle('collapsed');
     designForm.classList.add('collapsed');
     completeForm.classList.add('collapsed');
   }
-  
+
 
 }
 
@@ -42,10 +42,10 @@ if (legendId ==='designLegend'){
 
 function handleCollapsed (event) {
   event.preventDefault ();
-  //rotateArrow (); 
+  //rotateArrow ();
   const legendId = event.currentTarget.id;
   openForm (legendId);
-  
+
 }
 
 completeLegend.addEventListener('click', handleCollapsed);
