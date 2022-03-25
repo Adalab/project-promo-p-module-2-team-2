@@ -32,48 +32,202 @@
       /></a>
     </header>
 
-    <main>
-      
-      <form action="" method="post">
-        <fieldset class="design-box">
-            <legend>Diseña</legend>
-           
-            <img class="icon-up" alt="chevron-up"><i class="fa-solid fa-chevron-up"></i>
-            <p>Colores</p>
-            <!--Input y primer rectángulo de colores-->
-            <input type="radio" id="firstColour" name="firstColour" value="firstColour">
-            <div class="design__container">
-                <div class="design__rectangle1">
-                </div>
-                <div class="design__rectangle2">
-                </div>
-                <div class="design__rectangle3">
-                </div>
+    <main class="main">
+      <section class="main-preview">
+        <div class="main-preview-wrapper">
+          <button class="main-preview__button">
+            <i class="fa-solid fa-trash-can"></i>Reset
+          </button>
+        </div>
+        <article class="profile-card">
+          <div class="main-preview-wrapper">
+            <div class="profile-card-border">
+              <h2 class="profile-card__name">Nombre Apellido</h2>
+              <p class="profile-card__occupation">Profesión</p>
             </div>
-            <!--Input y segundo rectángulo de colores-->
-            <input type="radio" id="secondColor" name="secondColour" value="secondColour">
-            <div class="design__container">
-                <div class="design__rectangle4">
-                </div>
-                <div class="design__rectangle5">
-                </div>
-                <div class="design__rectangle6">
-                </div>
+            <div class="profile-card__img"></div>
+            <ul class="profile-card__social">
+              <li>
+                <a class="social-links" href=""
+                  ><i class="fa-solid fa-mobile-screen-button"></i
+                ></a>
+              </li>
+              <li>
+                <a class="social-links" href=""
+                  ><i class="fa-regular fa-envelope"></i
+                ></a>
+              </li>
+              <li>
+                <a class="social-links" href=""
+                  ><i class="fa-brands fa-linkedin-in"></i
+                ></a>
+              </li>
+              <li>
+                <a class="social-links" href=""
+                  ><i class="fa-brands fa-github-alt"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <form class="wrapper" action="" method="post">
+        <fieldset class="design">
+          <!------------SECTION LEGEND------------------->
+
+          <legend class="design__legend">
+            <i class="fa-regular fa-object-ungroup design__square"></i>
+            <h2 class="design__title">Diseña</h2>
+            <i class="design__up fa-solid fa-chevron-up"></i>
+          </legend>
+
+          <!------------SECTION COLOURS-------->
+
+          <div class="design__container">
+            <p class="design__subtitle">Colores</p>
+
+            <div class="design__options">
+              <!--Option 1-->
+
+              <div class="design__options--colour">
+                <input
+                  class="design__circle"
+                  type="radio"
+                  id="firstColour"
+                  name="firstColour"
+                  value="firstColour"
+                />
+                <div class="design__colour design__colour--1"></div>
+                <div class="design__colour design__colour--2"></div>
+                <div class="design__colour design__colour--3"></div>
+              </div>
+
+              <!--Option 2-->
+
+              <div class="design__options--colour">
+                <input
+                  class="design__circle"
+                  type="radio"
+                  id="secondColour"
+                  name="secondColour"
+                  value="secondColour"
+                />
+                <div class="design__colour design__colour--4"></div>
+                <div class="design__colour design__colour--5"></div>
+                <div class="design__colour design__colour--6"></div>
+              </div>
+
+              <!--Option 3-->
+
+              <div class="design__options--colour">
+                <input
+                  class="design__circle"
+                  type="radio"
+                  id="thirdColour"
+                  name="thirdColour"
+                  value="thirdColour"
+                />
+                <div class="design__colour design__colour--7"></div>
+                <div class="design__colour design__colour--8"></div>
+                <div class="design__colour design__colour--9"></div>
+              </div>
             </div>
-            <!--Input y tercer rectángulo de colores-->
-            <input type="radio" id="thirdColour" name="thirdColour" value="thirdColour">
-            <div class="design__container">
-                <div class="design__rectangle7">
-                </div>
-                <div class="design__rectangle8">
-                </div>
-                <div class="design__rectangle9">
-                </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="complete">
+          <!------------SECTION LEGEND------------------->
+
+          <legend class="complete__legend">
+            <i class="complete__keyboard fa-regular fa-keyboard"></i>
+            <h2 class="complete__title">Rellena</h2>
+            <i class="complete__up fa-solid fa-chevron-up"></i>
+          </legend>
+
+          <!----------------SECTION INPUTS------------------>
+
+          <div class="complete__form">
+            <label class="complete__label" for="name">Nombre completo</label>
+            <input
+              class="complete__input"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Ej: Sally Jill"
+            />
+
+            <label class="complete__label" for="job">Puesto</label>
+            <input
+              class="complete__input"
+              type="text"
+              id="job"
+              name="job"
+              placeholder="Ej: Front-end unicorn"
+            />
+
+            <label class="complete__label" for="photo">Imagen de perfil</label>
+
+            <!-- PARTE AÑADIR IMAGEN / EN FUTURO USAR LIBRERÍA-->
+
+            <div class="complete__photo">
+              <label class="complete__photo__label" for="">Añadir imagen</label>
+              <div class="complete__photo__square"></div>
+            </div>
+            <!--------------FIN AÑADIR IMAGEN------------>
+
+            <label class="complete__label" for="email">Email</label>
+            <input
+              class="complete__input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Ej: sally-hill@gmail.com"
+            />
+
+            <label class="complete__label" for="phone">Teléfono</label>
+            <input
+              class="complete__input"
+              type="number"
+              id="number"
+              name="number"
+              placeholder="Ej: 555-55-55-55"
+            />
+
+            <label class="complete__label" for="linkedin">Linkedin</label>
+            <input
+              class="complete__input"
+              type="text"
+              id="linkedin"
+              name="linkedin"
+              placeholder="Ej: linkedin.com/in/sally.hill"
+            />
+
+            <label class="complete__label" for="github">Github</label>
+            <input
+              class="complete__input"
+              type="text"
+              id="github"
+              name="github"
+              placeholder="Ej: @sally-hill"
+            />
+          </div>
+        </fieldset>
+
+        <fieldset class="share">
+            <div> 
+            <legend class="share__legend"><i class="fa-solid fa-share-nodes share__nodes"></i></i>Comparte<i class="fa-solid fa-chevron-up share__up"></i></legend>
+
+            <button class="share__button"><i class="fa-solid fa-address-card share__card"></i>Crear tarjeta</button>
             </div>
 
-        </fieldset>
-        
-        
+            <div class=share__div>
+              <h3 class="share__title">La tarjeta ha sido creada</h3>
+              <a class="share__link" href="ttps://awesome-profile-card.com?id=A456DF0001">ttps://awesome-profile-card.com?id=A456DF0001</a>
+             <button class="share__button--in"><i class="fa-brands fa-twitter share__twi"></i>Compartir en twitter</button>
+            </div>
+         
+          </fieldset>
       </form>
 
     </main>

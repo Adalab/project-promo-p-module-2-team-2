@@ -1,0 +1,99 @@
+.share {
+  border-color: transparent;
+  display: flex;
+  flex-direction: column;
+
+  &__legend {
+    display: flex;
+    flex-direction: row;
+    gap: 12rem;
+    margin: 5rem 0 30rem 0;
+    text-transform: uppercase;
+    font-family: $font_open;
+    font-weight: $font_w_semibold;
+    font-size: 18rem;
+    color: $col_gunmetal;
+  }
+
+  &__nodes {
+    display: flex;
+    align-items: center;
+    color: $col_dull_orange;
+    font-size: 18rem;
+    font-weight: $font_w_semibold;
+    width: 16rem;
+    height: 18rem;
+    margin-top: 2rem;
+  }
+
+  &__up {
+    margin-left: 120rem;
+    align-items: center;
+  }
+
+  &__button {
+    width: 199rem;
+    height: 50rem;
+    margin-left: 40rem;
+    margin-bottom: 50rem;
+    color: $col_white_four;
+    font-family: $font_open;
+    font-weight: $font_w_semibold;
+    font-size: 18rem;
+    text-transform: uppercase;
+    border-radius: 12rem;
+    border-color: $col_white;
+    background-color: $col_white_five;
+  }
+
+  &__card {
+    margin-right: 10rem;
+  }
+
+  &__div {
+    border-top: 1rem;
+    margin-bottom: 20rem;
+    border-top: 1rem solid $col_grayline;
+    border-bottom: 1rem solid $col_grayline;
+  }
+
+  &__title {
+    color: $col_gunmetal;
+    font-family: $font_open;
+    font-weight: $font_w_semibold;
+    font-size: 18rem;
+    text-align: center;
+    margin: 20rem 0 5rem 0;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: $col_dull_orange;
+    font-family: font_open;
+    font-weight: $font_w_semibold;
+    font-size: 12rem;
+    margin-bottom: 12rem;
+  }
+
+  &__button--in {
+    width: 181rem;
+    height: 30rem;
+    border-radius: 3rem;
+    background-color: $col_azure;
+    font-family: OpenSans;
+    font-size: 12rem;
+    color: $col_white_four;
+    display: flex;
+    gap: 10rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 35rem 50rem;
+  }
+
+  &share__twi {
+    width: 20rem;
+    height: 20rem;
+  }
+}
