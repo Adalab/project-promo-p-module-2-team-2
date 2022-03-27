@@ -5,8 +5,14 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 500px;
+  @media all and (min-width: $break_point_tablet) {
+    margin: 20rem 40rem;
+    border-radius: 5rem;
+    height: auto;
+  }
 
-  &-wrapper {
+  .main-preview-wrapper {
     width: 240rem;
   }
 
@@ -22,6 +28,9 @@
     border-radius: 20rem;
     margin-bottom: 30rem;
     padding: 10rem 15rem;
+    @media all and (min-width: $break_point_tablet) {
+      transform: translateY(-30rem);
+    }
   }
 }
 
@@ -32,6 +41,9 @@
 .profile-card {
   background-color: $col-white;
   font-family: $font_montserrat;
+  @media all and (min-width: $break_point_tablet) {
+    transform: translateY(-30rem);
+  }
   &__name {
     font-size: 18rem;
     color: $col_dark_green_blue;
