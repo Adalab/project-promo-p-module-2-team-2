@@ -8,6 +8,7 @@
   height: 500px;
   @media all and (min-width: $break_point_tablet) {
     margin: 20rem 40rem;
+    min-height: 600px;
     border-radius: 5rem;
     height: auto;
   }
