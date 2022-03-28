@@ -30,10 +30,13 @@
   color: $col_brownish_grey_05;
 }
 
-.main {
+.main-create {
+  min-height: calc(100vh - 110rem);
+
   display: flex;
   flex-direction: column;
   background-color: white;
+
   background: linear-gradient(
     180deg,
     rgba(245, 245, 245, 1) 0%,
@@ -42,6 +45,7 @@
   );
 
   @media all and (min-width: $break_point_tablet) {
+    height: calc(100vh - 60rem);
     flex-direction: row-reverse;
   }
 }

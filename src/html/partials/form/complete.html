@@ -4,15 +4,17 @@
   <legend class="complete__legend js_complete_legend" id="completeLegend">
     <span><i class="complete__keyboard fa-regular fa-keyboard"></i></span>
     <h2 class="complete__title">Rellena</h2>
-    <span><i class="js_arrow complete__up fa-solid fa-chevron-up"></i></span>
+    <span
+      ><i class="js_arrow complete__up fa-solid fa-chevron-up toggle_arrow"></i
+    ></span>
   </legend>
 
   <!----------------SECTION INPUTS------------------>
 
-  <div class="complete__form js_complete_form">
+  <div class="complete__form js_complete_form collapsed">
     <label class="complete__label" for="name">Nombre completo</label>
     <input
-      class="complete__input"
+      class="complete__input js_name_input"
       type="text"
       id="name"
       name="name"
@@ -21,7 +23,7 @@
 
     <label class="complete__label" for="job">Puesto</label>
     <input
-      class="complete__input"
+      class="complete__input js_ocupation_input"
       type="text"
       id="job"
       name="job"
