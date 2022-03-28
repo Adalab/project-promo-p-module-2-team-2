@@ -12,12 +12,10 @@ const designForm = document.querySelector ('.js_design_form');
 
 const shareForm = document.querySelector ('.js_share_form');
 
-
-//function rotateArrow () {}
-
+const arrow = document.querySelectorAll ('.js_arrow');
 
 
-//
+
 function openForm (legendId) {
   if (legendId ==='completeLegend'){
     completeForm.classList.toggle('collapsed');
@@ -37,6 +35,29 @@ function openForm (legendId) {
     completeForm.classList.add('collapsed');
   }
 
+}
+
+
+function rotateArrow (legendId) {
+  if (legendId ==='completeLegend'){
+    arrow[1].classList.add('toggle_arrow');
+    arrow[0].classList.remove('toggle_arrow');
+    arrow[2].classList.remove('toggle_arrow');
+  }
+
+  if (legendId ==='designLegend'){
+    arrow[0].classList.add('toggle_arrow');
+    arrow[1].classList.remove('toggle_arrow');
+    arrow[2].classList.remove('toggle_arrow');
+
+  }
+
+  if (legendId ==='shareLegend'){
+    arrow[2].classList.add('toggle_arrow');
+    arrow[1].classList.remove('toggle_arrow');
+    arrow[0].classList.remove('toggle_arrow');
+
+  }
 
 }
 
@@ -44,8 +65,8 @@ function openForm (legendId) {
 
 function handleCollapsed (event) {
   event.preventDefault ();
-  //rotateArrow ();
   const legendId = event.currentTarget.id;
+  rotateArrow (legendId);
   openForm (legendId);
 
 }
