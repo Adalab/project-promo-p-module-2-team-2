@@ -31,7 +31,7 @@
 }
 
 .main-create {
-  min-height: calc(100vh - 110rem);
+  min-height: calc(100vh - 110rem - 110rem);
 
   display: flex;
   flex-direction: column;
@@ -45,7 +45,7 @@
   );
 
   @media all and (min-width: $break_point_tablet) {
-    height: calc(100vh - 60rem);
+    height: calc(100vh - 60rem - 110rem);
     flex-direction: row-reverse;
   }
 }
