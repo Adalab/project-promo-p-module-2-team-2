@@ -15,6 +15,8 @@ const shareForm = document.querySelector ('.js_share_form');
 
 //function rotateArrow () {}
 
+
+
 //
 function openForm (legendId) {
   if (legendId ==='completeLegend'){
