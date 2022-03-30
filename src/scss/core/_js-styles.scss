@@ -6,14 +6,6 @@
   transform: rotate(180deg);
 }
 
-/*
-
-1º - Nombre / Iconos.
-2º - Borde.
-3º - Círculo de los iconos.
-
-*/
-
 .style_001 {
   // Nombre
   .profile-card__name {
@@ -37,45 +29,31 @@
 }
 
 .style_002 {
-  // Nombre
   .profile-card__name {
     color: $col_dried_blood;
   }
 
-  // Borde
   .profile-card-border {
     border-left: 5rem solid $col_rusty_red;
   }
 
-  // Iconos
-  // Borde de los iconos
   .social-links {
-    // Icono
     color: $col_dried_blood;
-
-    // Borde
     border: 2px solid $col_tomato;
   }
 }
 
 .style_003 {
-  // Nombre
   .profile-card__name {
     color: $col_slate;
   }
 
-  // Borde
   .profile-card-border {
     border-left: 5rem solid $col_faded_orange;
   }
 
-  // Iconos
-  // Borde de los iconos
   .social-links {
-    // Icono
     color: $col_slate;
-
-    // Borde
     border: 2px solid $col_light_grey_blue;
   }
 }
