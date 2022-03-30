@@ -57,7 +57,7 @@
   &__img {
     width: 240rem;
     height: 200rem;
-    background-image: url("https://dice-media.imgix.net/events/the-story-of-nina-simone-a-live-performance-24th-jan-the-blues-kitchen-brixton-london-tickets/square-original.jpg?rect=352%2C0%2C569%2C569");
+    background-image: url('https://dice-media.imgix.net/events/the-story-of-nina-simone-a-live-performance-24th-jan-the-blues-kitchen-brixton-london-tickets/square-original.jpg?rect=352%2C0%2C569%2C569');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -69,7 +69,7 @@
 }
 
 .profile-card-border {
-  border-left: 5rem solid $col_dark_green_blue;
+  border-left: 5rem solid $col_dirty_blue;
   padding-left: 20rem;
   margin: 20rem 0;
 }
