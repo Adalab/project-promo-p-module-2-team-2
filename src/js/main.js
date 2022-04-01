@@ -15,6 +15,8 @@ const style_001 = document.querySelector('#style_001');
 const style_002 = document.querySelector('#style_002');
 const style_003 = document.querySelector('#style_003');
 
+//abrir y cerrar formulario
+
 function openForm(legendId) {
   if (legendId === 'completeLegend') {
     completeForm.classList.toggle('collapsed');
@@ -74,28 +76,63 @@ shareLegend.addEventListener('click', handleCollapsed);
 
 //
 //
-// Mostrar el texto mientras se escribe
+// Rellenar la tarjeta con el valor recogido en los inputs
 //
 //
 
 // Identificar los elementos de los que se recoge la información:
-const realTimeNameInput = document.querySelector('.js_name_input');
-const realTimeOcupationInput = document.querySelector('.js_ocupation_input');
+const compeleteInputs = document.querySelector('.js_complete_inputs');
+
+//objeto donde se almacenará la informaciçon recogida:
+const data = {
+  name: '',
+  occupation: '',
+  email: '',
+  number: '',
+  linkedin: '',
+  github: '',
+};
 
 // Identificar los elementos sobre los que se va a pintar:
-const realTimeName = document.querySelector('.js_name');
-const realTimeOcupation = document.querySelector('.js_ocupation');
+const namePreview = document.querySelector('.js_name');
+const occupationPreview = document.querySelector('.js_occupation');
+const numberPreview = document.querySelector('.js_telephone');
+const emailPreview = document.querySelector('.js_email');
+const linkedinPreview = document.querySelector('.js_linkedin');
+const githubPreview = document.querySelector('.js_github');
 
-function showName() {
-  realTimeName.innerHTML = realTimeNameInput.value;
+//función que pinta el Preview con los datos recogidos en handleFilledInputs:
+function paintCardPreview() {
+  namePreview.innerHTML = data.name;
+  occupationPreview.innerHTML = data.occupation;
+  emailPreview.href = `mailto:${data.email}`;
+  numberPreview.href = `tel:${data.number}`;
+  linkedinPreview.href = data.linkedin;
+  githubPreview.href = data.github;
 }
 
-function showOcupation() {
-  realTimeOcupation.innerHTML = realTimeOcupationInput.value;
+//función que recoge la información rellenada en los inputs
+function handleFilledInputs(event) {
+  console.log(event.target.id);
+  const inputId = event.target.id;
+  if (inputId === 'name') {
+    data.name = event.target.value;
+  } else if (inputId === 'occupation') {
+    data.occupation = event.target.value;
+  } else if (inputId === 'email') {
+    data.email = event.target.value;
+  } else if (inputId === 'number') {
+    data.number = event.target.value;
+  } else if (inputId === 'linkedin') {
+    data.linkedin = event.target.value;
+  } else if (inputId === 'github') {
+    data.github = event.target.value;
+  }
+  console.log(data);
+  paintCardPreview(); //llamada a pintar el html
 }
 
-realTimeNameInput.addEventListener('keyup', showName);
-realTimeOcupationInput.addEventListener('keyup', showOcupation);
+compeleteInputs.addEventListener('keyup', handleFilledInputs);
 
 //
 //
