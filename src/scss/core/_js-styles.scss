@@ -1,0 +1,59 @@
+.collapsed {
+  display: none;
+}
+
+.toggle_arrow {
+  transform: rotate(180deg);
+}
+
+.style_001 {
+  // Nombre
+  .profile-card__name {
+    color: $col_dark_green_blue;
+  }
+
+  // Borde
+  .profile-card-border {
+    border-left: 5rem solid $col_dirty_blue;
+  }
+
+  // Iconos
+  // Borde de los iconos
+  .social-links {
+    // Icono
+    color: $col_dark_green_blue;
+
+    // Borde
+    border: 2px solid $col_hospital_green;
+  }
+}
+
+.style_002 {
+  .profile-card__name {
+    color: $col_dried_blood;
+  }
+
+  .profile-card-border {
+    border-left: 5rem solid $col_rusty_red;
+  }
+
+  .social-links {
+    color: $col_dried_blood;
+    border: 2px solid $col_tomato;
+  }
+}
+
+.style_003 {
+  .profile-card__name {
+    color: $col_slate;
+  }
+
+  .profile-card-border {
+    border-left: 5rem solid $col_faded_orange;
+  }
+
+  .social-links {
+    color: $col_slate;
+    border: 2px solid $col_light_grey_blue;
+  }
+}
