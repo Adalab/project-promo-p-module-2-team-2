@@ -1,13 +1,19 @@
 'use strict';
 
 const completeLegend = document.querySelector('.js_complete_legend');
-
 const designLegend = document.querySelector('.js_design_legend');
 const shareLegend = document.querySelector('.js_share_legend');
+
 const completeForm = document.querySelector('.js_complete_form');
 const designForm = document.querySelector('.js_design_form');
 const shareForm = document.querySelector('.js_share_form');
+
 const arrow = document.querySelectorAll('.js_arrow');
+
+const stylePreview = document.querySelector('.js_style_preview');
+const style_001 = document.querySelector('#style_001');
+const style_002 = document.querySelector('#style_002');
+const style_003 = document.querySelector('#style_003');
 
 function openForm(legendId) {
   if (legendId === 'completeLegend') {
@@ -90,3 +96,32 @@ function showOcupation() {
 
 realTimeNameInput.addEventListener('keyup', showName);
 realTimeOcupationInput.addEventListener('keyup', showOcupation);
+
+//
+//
+// Cambiar los colores de la tarjeta Preview
+//
+//
+
+function changeColorStyle(event) {
+  const styleX = event.currentTarget.id;
+  if (styleX === 'style_001') {
+    stylePreview.classList.add('style_001');
+    stylePreview.classList.remove('style_002');
+    stylePreview.classList.remove('style_003');
+  }
+  if (styleX === 'style_002') {
+    stylePreview.classList.add('style_002');
+    stylePreview.classList.remove('style_001');
+    stylePreview.classList.remove('style_003');
+  }
+  if (styleX === 'style_003') {
+    stylePreview.classList.add('style_003');
+    stylePreview.classList.remove('style_002');
+    stylePreview.classList.remove('style_001');
+  }
+}
+
+style_001.addEventListener('click', changeColorStyle);
+style_002.addEventListener('click', changeColorStyle);
+style_003.addEventListener('click', changeColorStyle);
