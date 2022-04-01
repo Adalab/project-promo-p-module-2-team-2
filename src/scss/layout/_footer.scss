@@ -2,13 +2,22 @@
   width: 100%;
   height: 110rem;
 
+<<<<<<< HEAD
+=======
+  position: absolute;
+  bottom: 0;
+
+>>>>>>> 535755160c39664e3a583d60c4967c5091dcb70b
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   border-top: 1rem solid $col_brownish_grey_05;
+<<<<<<< HEAD
   background-color: $col_white;
+=======
+>>>>>>> 535755160c39664e3a583d60c4967c5091dcb70b
 
   @media (min-width: $break_point_tablet) {
     width: 100%;
