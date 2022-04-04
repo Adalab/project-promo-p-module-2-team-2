@@ -1,16 +1,10 @@
 .main-landing {
   height: calc(100vh - 110rem);
-<<<<<<< HEAD
   min-height: 520rem;
   padding: 0 35rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-=======
-  padding: 0 35rem 0 30rem;
-  display: flex;
-  flex-direction: column;
->>>>>>> 535755160c39664e3a583d60c4967c5091dcb70b
   align-items: center;
 
   text-align: center;
@@ -18,28 +12,16 @@
   background-color: $col_white_four;
   @media (min-width: $break_point_tablet) {
     height: calc(100vh - 60rem);
-<<<<<<< HEAD
-=======
-    padding-bottom: 60rem;
->>>>>>> 535755160c39664e3a583d60c4967c5091dcb70b
   }
 
   &__img {
     width: 250rem;
     max-width: 250rem;
     padding: 0 35rem;
-<<<<<<< HEAD
-=======
-    margin-top: 95rem;
->>>>>>> 535755160c39664e3a583d60c4967c5091dcb70b
 
     @media (min-width: $break_point_tablet) {
       width: 420rem;
       max-width: 420rem;
-<<<<<<< HEAD
-=======
-      margin-top: 200rem;
->>>>>>> 535755160c39664e3a583d60c4967c5091dcb70b
     }
   }
   &__title {
@@ -98,13 +80,6 @@
     background-color: $col_dirty_blue;
     border-radius: 20rem;
 
-<<<<<<< HEAD
-=======
-    @media (min-width: $break_point_tablet) {
-      margin-top: 150rem;
-    }
-
->>>>>>> 535755160c39664e3a583d60c4967c5091dcb70b
     &:hover {
       background-color: $col_dull_orange;
     }
