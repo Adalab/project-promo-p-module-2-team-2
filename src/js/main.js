@@ -195,3 +195,29 @@ function previewUser() {
 }
 
 inputsForm.addEventListener('keyup', handleData);
+
+//Reset button
+
+/*const btnReset = document.querySelector('.js-reset-btn');
+
+resetPreview(){
+
+  data.name = '';
+  data.job = '';
+  data.email = '';
+  data.phone = '';
+  data.linkedin = '';
+  data.github = '';
+  /*
+  photo: '',
+  colores
+
+}
+*/
+
+/*function handleReset() {
+  resetPreview();
+  //previewUser();
+}
+
+btnReset.addEventListener('click', handleReset);*/
