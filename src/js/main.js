@@ -79,23 +79,24 @@ shareLegend.addEventListener('click', handleCollapsed);
 //
 
 // Identificar los elementos de los que se recoge la información:
-const realTimeNameInput = document.querySelector('.js_name_input');
-const realTimeOcupationInput = document.querySelector('.js_ocupation_input');
+// const realTimeNameInput = document.querySelector('.js_name_input');
+// const realTimeOcupationInput = document.querySelector('.js_ocupation_input');
 
-// Identificar los elementos sobre los que se va a pintar:
-const realTimeName = document.querySelector('.js_name');
-const realTimeOcupation = document.querySelector('.js_ocupation');
+// // Identificar los elementos sobre los que se va a pintar:
+// const realTimeName = document.querySelector('.js_name');
+// const realTimeOcupation = document.querySelector('.js_ocupation');
 
-function showName() {
-  realTimeName.innerHTML = realTimeNameInput.value;
-}
+// function showName() {
+//   realTimeName.innerHTML = realTimeNameInput.value;
+// }
 
-function showOcupation() {
-  realTimeOcupation.innerHTML = realTimeOcupationInput.value;
-}
+// function showOcupation() {
 
-realTimeNameInput.addEventListener('keyup', showName);
-realTimeOcupationInput.addEventListener('keyup', showOcupation);
+//   realTimeOcupation.innerHTML = realTimeOcupationInput.value;
+// }
+
+// realTimeNameInput.addEventListener('keyup', showName);
+// realTimeOcupationInput.addEventListener('keyup', showOcupation);
 
 //
 //
@@ -125,3 +126,72 @@ function changeColorStyle(event) {
 style_001.addEventListener('click', changeColorStyle);
 style_002.addEventListener('click', changeColorStyle);
 style_003.addEventListener('click', changeColorStyle);
+
+///DESDE AQUÍ!!
+
+//CONSTANTE DATA
+//En una misma variable creo un objeto que guarde todos los valores que la usuaria escriba, es útil para luego pasar todos esos datos al servidor.
+const data = {
+  name: '',
+  job: '',
+  email: '',
+  phone: '',
+  linkedin: '',
+  github: '',
+  /*
+  photo: '',
+  colores*/
+};
+
+const inputsForm = document.querySelector('.js_allInputs'); //PRIMER DIV DEBAJO DE SECTION INPUTS
+const emailIcon = document.querySelector('.js_icon_email'); //CREO CLASE PARA ICONOS RRSS Y ME LOS TRAIGO
+const phoneIcon = document.querySelector('.js_icon_phone');
+const linkedinIcon = document.querySelector('.js_icon_linkedin');
+const githubIcon = document.querySelector('.js_icon_github');
+
+//CON ESTA FUNCIÓN RECOJO LOS DATOS DE LA USUARIA Y SE LOS DOY COMO VALOR A LA CONST DATA
+function handleData(event) {
+  const inputType = event.target;
+  if (inputType.id === 'name') {
+    data.name = inputType.value;
+  } else if (inputType.id === 'job') {
+    data.job = inputType.value;
+  } else if (inputType.id === 'email') {
+    data.email = inputType.value;
+  } else if (inputType.id === 'phone') {
+    data.phone = inputType.value;
+  } else if (inputType.id === 'linkedin') {
+    data.linkedin = inputType.value;
+  } else if (inputType.id === 'github') {
+    data.github = inputType.value;
+  }
+  previewUser(); //llamo a la función que me va cambiando el valor de la tarjeta preview, con lo que he ido guardando en el data
+}
+
+//Función que cambia los valores del preview con los datos que se van pasando a la constante data.
+const realTimeName = document.querySelector('.js_name');
+const realTimeOcupation = document.querySelector('.js_ocupation');
+
+function previewUser() {
+  realTimeName.innerHTML = data.name;
+  realTimeOcupation.innerHTML = data.job;
+  //Para que cuando quite mi nombre vuelva a salir lo que estaba escrito en la tarjeta, nombre y apellidos y profesión
+  if (data.name === '') {
+    realTimeName.innerHTML = 'Nombre y Apellidos';
+  } else {
+    realTimeName.innerHTML = data.name;
+  }
+
+  if (data.job === '') {
+    realTimeOcupation.innerHTML = 'Profesión';
+  } else {
+    realTimeOcupation.innerHTML = data.job;
+  }
+
+  emailIcon.href = `mailto:${data.email}`; //Ponemos target="_blank", en los enlaces del main-preview?
+  phoneIcon.href = `tel:${data.phone}`;
+  linkedinIcon.href = data.linkedin;
+  githubIcon.href = data.github;
+}
+
+inputsForm.addEventListener('keyup', handleData);
