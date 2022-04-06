@@ -35,35 +35,35 @@
     <main class="main-create">
       <section class="main-preview">
         <div class="main-preview-wrapper">
-          <button class="main-preview__button">
+          <button class="main-preview__button js-reset-btn">
             <i class="fa-solid fa-trash-can"></i>Reset
           </button>
         </div>
         <article class="profile-card">
-          <div class="main-preview-wrapper">
+          <div class="main-preview-wrapper js_style_preview">
             <div class="profile-card-border">
-              <h2 class="profile-card__name js_name">Nombre y Apellido</h2>
+              <h2 class="profile-card__name js_name">Nombre y Apellidos</h2>
               <p class="profile-card__occupation js_ocupation">Profesión</p>
             </div>
-            <div class="profile-card__img"></div>
+            <div class="profile-card__img js__profile-image"></div>
             <ul class="profile-card__social">
               <li>
-                <a class="social-links" href=""
+                <a class="social-links js_icon_phone" href=""
                   ><i class="fa-solid fa-mobile-screen-button"></i
                 ></a>
               </li>
               <li>
-                <a class="social-links" href=""
+                <a class="social-links js_icon_email" href=""
                   ><i class="fa-regular fa-envelope"></i
                 ></a>
               </li>
               <li>
-                <a class="social-links" href=""
+                <a class="social-links js_icon_linkedin" href=""
                   ><i class="fa-brands fa-linkedin-in"></i
                 ></a>
               </li>
               <li>
-                <a class="social-links" href=""
+                <a class="social-links js_icon_github" href=""
                   ><i class="fa-brands fa-github-alt"></i
                 ></a>
               </li>
@@ -92,7 +92,7 @@
             <div class="design__options">
               <!--Option 1-->
 
-              <div class="design__options--colour">
+              <div class="design__options--colour" id="style_001">
                 <input
                   class="design__circle"
                   type="radio"
@@ -107,7 +107,7 @@
 
               <!--Option 2-->
 
-              <div class="design__options--colour">
+              <div class="design__options--colour" id="style_002">
                 <input
                   class="design__circle"
                   type="radio"
@@ -122,7 +122,7 @@
 
               <!--Option 3-->
 
-              <div class="design__options--colour">
+              <div class="design__options--colour" id="style_003">
                 <input
                   class="design__circle"
                   type="radio"
@@ -151,7 +151,7 @@
 
           <!----------------SECTION INPUTS------------------>
 
-          <div class="complete__form js_complete_form collapsed">
+          <div class="complete__form js_complete_form collapsed js_allInputs">
             <label class="complete__label" for="name">Nombre completo</label>
             <input
               class="complete__input js_name_input"
@@ -175,8 +175,18 @@
             <!-- PARTE AÑADIR IMAGEN / EN FUTURO USAR LIBRERÍA-->
 
             <div class="complete__photo">
-              <label class="complete__photo__label" for="">Añadir imagen</label>
-              <div class="complete__photo__square"></div>
+              <label class="complete__photo__label" for="add_image_btn"
+                >Añadir imagen</label
+              >
+              <input
+                class="js__profile-upload-btn hidden"
+                type="file"
+                name=""
+                id="add_image_btn"
+              />
+              <div
+                class="complete__photo__square js__profile-preview profile__preview"
+              ></div>
             </div>
             <!--------------FIN AÑADIR IMAGEN------------>
 
@@ -192,8 +202,8 @@
             <label class="complete__label" for="phone">Teléfono</label>
             <input
               class="complete__input"
-              type="number"
-              id="number"
+              type="tel"
+              id="phone"
               name="number"
               placeholder="Ej: 555-55-55-55"
             />
