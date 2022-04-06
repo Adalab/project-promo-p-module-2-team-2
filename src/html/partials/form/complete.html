@@ -11,7 +11,7 @@
 
   <!----------------SECTION INPUTS------------------>
 
-  <div class="complete__form js_complete_form collapsed">
+  <div class="complete__form js_complete_form collapsed js_allInputs">
     <label class="complete__label" for="name">Nombre completo</label>
     <input
       class="complete__input js_name_input"
@@ -35,14 +35,24 @@
     <!-- PARTE AÑADIR IMAGEN / EN FUTURO USAR LIBRERÍA-->
 
     <div class="complete__photo">
-      <label class="complete__photo__label" for="">Añadir imagen</label>
-      <div class="complete__photo__square"></div>
+      <label class="complete__photo__label" for="add_image_btn"
+        >Añadir imagen</label
+      >
+      <input
+        class="js__profile-upload-btn hidden"
+        type="file"
+        name=""
+        id="add_image_btn"
+      />
+      <div
+        class="complete__photo__square js__profile-preview profile__preview"
+      ></div>
     </div>
     <!--------------FIN AÑADIR IMAGEN------------>
 
     <label class="complete__label" for="email">Email</label>
     <input
-      class="complete__input"
+      class="complete__input js_input_email"
       type="email"
       id="email"
       name="email"
@@ -51,16 +61,16 @@
 
     <label class="complete__label" for="phone">Teléfono</label>
     <input
-      class="complete__input"
-      type="number"
-      id="number"
+      class="complete__input js_input_phone"
+      type="tel"
+      id="phone"
       name="number"
       placeholder="Ej: 555-55-55-55"
     />
 
     <label class="complete__label" for="linkedin">Linkedin</label>
     <input
-      class="complete__input"
+      class="complete__input js_input_linkedin"
       type="text"
       id="linkedin"
       name="linkedin"
@@ -69,7 +79,7 @@
 
     <label class="complete__label" for="github">Github</label>
     <input
-      class="complete__input"
+      class="complete__input js_input_github"
       type="text"
       id="github"
       name="github"
