@@ -45,7 +45,7 @@
   );
 
   @media all and (min-width: $break_point_tablet) {
-    height: calc(100vh - 60rem - 110rem);
+    min-height: calc(100vh - 60rem - 110rem);
     flex-direction: row-reverse;
   }
 }
