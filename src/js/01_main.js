@@ -168,6 +168,8 @@ function handleData(event) {
     data.linkedin = inputType.value;
   } else if (inputType.id === 'github') {
     data.github = inputType.value;
+  } else if (inputType.id === 'photo') {
+    data.photo = inputType.value;
   }
   previewUser(); //llamo a la función que me va cambiando el valor de la tarjeta preview, con lo que he ido guardando en el data
 }
@@ -242,12 +244,12 @@ function handleReset(event) {
 
 btnReset.addEventListener('click', handleReset);
 
-//TWITTER
+//TWITTER!!!!!!
 
 const createButton = document.querySelector('.js_create_button'); //Botón de crear tarjeta
 const urlTwitter = document.querySelector('.js_url'); //URL twitter
-const shareButton = document.querySelector('.share__button--in');
-const feedBack = document.querySelector('.js_share__title--done');
+const shareButton = document.querySelector('.share__button--in'); //botón de compartir de twitter
+const feedBack = document.querySelector('.js_share__title--done'); //Frase que dice si se ha creado bien o no
 
 function handleClickCreateButton(event) {
   event.preventDefault();
