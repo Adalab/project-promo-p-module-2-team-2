@@ -15,6 +15,11 @@ const style_001 = document.querySelector('#style_001');
 const style_002 = document.querySelector('#style_002');
 const style_003 = document.querySelector('#style_003');
 
+// CONSTANTES PARA LAS IMÁGENES DE MINIATURA Y AVATAR DE LA TARJETA "PREVIEW".
+
+const profileImage = document.querySelector('.js__profile-image');
+const profilePreview = document.querySelector('.js__profile-preview');
+
 function openForm(legendId) {
   if (legendId === 'completeLegend') {
     completeForm.classList.toggle('collapsed');
@@ -221,3 +226,46 @@ function handleClickCreateButton(event) {
 }
 
 createButton.addEventListener('click', handleClickCreateButton);
+// Reset button
+
+const btnReset = document.querySelector('.js-reset-btn');
+const inputName = document.querySelector('.js_name_input');
+const inputJob = document.querySelector('.js_ocupation_input');
+const inputEmail = document.querySelector('.js_input_email');
+const inputPhone = document.querySelector('.js_input_phone');
+const inputLinkedin = document.querySelector('.js_input_linkedin');
+const inputGithub = document.querySelector('.js_input_github');
+
+function resetPreview() {
+  // Resetea los valores del objeto a cadenas vacias.
+  data.name = '';
+  data.job = '';
+  data.email = '';
+  data.phone = '';
+  data.linkedin = '';
+  data.github = '';
+  // photo: '',
+  // colores
+
+  // Resetea los valores del formurio a cadenas vacias.
+  inputName.value = '';
+  inputJob.value = '';
+  inputEmail.value = '';
+  inputPhone.value = '';
+  inputLinkedin.value = '';
+  inputGithub.value = '';
+
+  // Resetea los valores por defecto de la tarjeta de vista previa.
+  realTimeName.innerHTML = 'Nombre y Apellidos';
+  realTimeOcupation.innerHTML = 'Profesión';
+}
+
+function handleReset(event) {
+  event.preventDefault();
+  resetPreview();
+  //previewUser();
+  profileImage.style.backgroundImage = '';
+  profilePreview.style.backgroundImage = '';
+}
+
+btnReset.addEventListener('click', handleReset);
