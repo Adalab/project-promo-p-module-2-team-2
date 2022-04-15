@@ -200,32 +200,6 @@ function previewUser() {
 
 inputsForm.addEventListener('keyup', handleData);
 
-//twitter
-const createButton = document.querySelector('.js_create_button');
-
-function handleClickCreateButton(event) {
-  event.preventDefault();
-
-  fetch('https://awesome-profile-cards.herokuapp.com/card', {
-    method: 'POST',
-    header: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-  })
-    .then((response) => response.json())
-    .then((serverResp) => {
-      console.log(serverResp);
-
-      if (serverResp.success === false) {
-        // Ha ido mal
-        // Mostrar un mensajito de error en la página
-      } else {
-        // El servidor ha aceptado los datos.
-        // Mostrar la dirección que está en serverResp.cardURL y el botón de Tw.
-      }
-    });
-}
-
-createButton.addEventListener('click', handleClickCreateButton);
 // Reset button
 
 const btnReset = document.querySelector('.js-reset-btn');
@@ -238,17 +212,15 @@ const inputGithub = document.querySelector('.js_input_github');
 
 function resetPreview() {
   // Resetea los valores del objeto a cadenas vacias.
-  data.name = '';
+  (data.palette = 1), (data.name = '');
   data.job = '';
   data.email = '';
   data.phone = '';
   data.linkedin = '';
   data.github = '';
-  // photo: '',
-  // colores
-
-  // Resetea los valores del formurio a cadenas vacias.
-  inputName.value = '';
+  (data.photo = ''),
+    // Resetea los valores del formurio a cadenas vacias.
+    (inputName.value = '');
   inputJob.value = '';
   inputEmail.value = '';
   inputPhone.value = '';
@@ -269,3 +241,46 @@ function handleReset(event) {
 }
 
 btnReset.addEventListener('click', handleReset);
+
+//TWITTER
+
+const createButton = document.querySelector('.js_create_button'); //Botón de crear tarjeta
+const urlTwitter = document.querySelector('.js_url'); //URL twitter
+const shareButton = document.querySelector('.share__button--in');
+const feedBack = document.querySelector('.js_share__title--done');
+
+function handleClickCreateButton(event) {
+  event.preventDefault();
+
+  fetch('https://awesome-profile-cards.herokuapp.com/card', {
+    method: 'POST',
+    header: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((serverResp) => {
+      console.log(serverResp);
+
+      if (serverResp.success === false) {
+        feedBack.innerHTML = 'Falta algún dato del formulario';
+        // Mostrar un mensajito de error en la página
+      } else {
+        // El servidor ha aceptado los datos.
+        // Mostrar la dirección que está en serverResp.cardURL y el botón de Tw.
+        feedBack.innerHTML = 'La tarjeta ha sido creada:';
+        urlTwitter.innerHTML = serverResp.cardURL;
+        urlTwitter.href = serverResp.cardURL;
+      }
+    });
+  shareButton.remove('hidden');
+}
+
+function shareOnTwitter(event) {
+  event.preventDefault();
+  console.log(urlTwitter.href);
+  let url = `https://twitter.com/intent/tweet?text=He%20creado%20una%20tarjeta%20profesional.%20Conóceme!%20&url=${urlTwitter.href}`;
+  window.location.href = url;
+}
+
+createButton.addEventListener('click', handleClickCreateButton);
+shareButton.addEventListener('click ', shareOnTwitter);
