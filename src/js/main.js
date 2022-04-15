@@ -132,15 +132,14 @@ style_003.addEventListener('click', changeColorStyle);
 //CONSTANTE DATA
 //En una misma variable creo un objeto que guarde todos los valores que la usuaria escriba, es útil para luego pasar todos esos datos al servidor.
 const data = {
+  palette: 1,
   name: '',
   job: '',
   email: '',
   phone: '',
   linkedin: '',
   github: '',
-  /*
   photo: '',
-  colores*/
 };
 
 const inputsForm = document.querySelector('.js_allInputs'); //PRIMER DIV DEBAJO DE SECTION INPUTS
@@ -195,3 +194,30 @@ function previewUser() {
 }
 
 inputsForm.addEventListener('keyup', handleData);
+
+//twitter
+const createButton = document.querySelector('.js_create_button');
+
+function handleClickCreateButton(event) {
+  event.preventDefault();
+
+  fetch('https://awesome-profile-cards.herokuapp.com/card', {
+    method: 'POST',
+    header: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((serverResp) => {
+      console.log(serverResp);
+
+      if (serverResp.success === false) {
+        // Ha ido mal
+        // Mostrar un mensajito de error en la página
+      } else {
+        // El servidor ha aceptado los datos.
+        // Mostrar la dirección que está en serverResp.cardURL y el botón de Tw.
+      }
+    });
+}
+
+createButton.addEventListener('click', handleClickCreateButton);
