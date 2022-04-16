@@ -136,7 +136,7 @@ style_003.addEventListener('click', changeColorStyle);
 
 //CONSTANTE DATA
 //En una misma variable creo un objeto que guarde todos los valores que la usuaria escriba, es útil para luego pasar todos esos datos al servidor.
-const data = {
+let data = {
   palette: 1,
   name: '',
   job: '',
@@ -214,15 +214,17 @@ const inputGithub = document.querySelector('.js_input_github');
 
 function resetPreview() {
   // Resetea los valores del objeto a cadenas vacias.
-  (data.palette = 1), (data.name = '');
+  data.palette = 1;
+  data.name = '';
   data.job = '';
   data.email = '';
   data.phone = '';
   data.linkedin = '';
   data.github = '';
-  (data.photo = ''),
-    // Resetea los valores del formurio a cadenas vacias.
-    (inputName.value = '');
+  data.photo = '';
+
+  // Resetea los valores del formurio a cadenas vacias.
+  inputName.value = '';
   inputJob.value = '';
   inputEmail.value = '';
   inputPhone.value = '';
@@ -256,12 +258,12 @@ function handleClickCreateButton(event) {
 
   fetch('https://awesome-profile-cards.herokuapp.com/card', {
     method: 'POST',
-    header: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
   })
     .then((response) => response.json())
     .then((serverResp) => {
-      console.log(serverResp);
+      console.log('ESTO', serverResp);
 
       if (serverResp.success === false) {
         feedBack.innerHTML = 'Falta algún dato del formulario';
@@ -269,9 +271,13 @@ function handleClickCreateButton(event) {
       } else {
         // El servidor ha aceptado los datos.
         // Mostrar la dirección que está en serverResp.cardURL y el botón de Tw.
+        console.log('001');
         feedBack.innerHTML = 'La tarjeta ha sido creada:';
+        console.log('002');
         urlTwitter.innerHTML = serverResp.cardURL;
+        console.log('003');
         urlTwitter.href = serverResp.cardURL;
+        console.log('004');
       }
     });
   shareButton.remove('hidden');
@@ -280,9 +286,22 @@ function handleClickCreateButton(event) {
 function shareOnTwitter(event) {
   event.preventDefault();
   console.log(urlTwitter.href);
-  let url = `https://twitter.com/intent/tweet?text=He%20creado%20una%20tarjeta%20profesional.%20Conóceme!%20&url=${urlTwitter.href}`;
+  let url = `https://twitter.com/intent/tweet?text=He%20creado%20una%20tarjeta%20profesional.%20¡Conóceme!%20&url=${urlTwitter.href}`;
   window.location.href = url;
 }
 
 createButton.addEventListener('click', handleClickCreateButton);
 shareButton.addEventListener('click ', shareOnTwitter);
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//

@@ -35,14 +35,13 @@
     <!-- PARTE AÑADIR IMAGEN / EN FUTURO USAR LIBRERÍA-->
 
     <div class="complete__photo">
-      <label class="complete__photo__label" for="add_image_btn"
-        >Añadir imagen</label
-      >
+      <label class="complete__photo__label" for="photo">Añadir imagen</label>
       <input
         class="js__profile-upload-btn hidden"
         type="file"
         name=""
         id="photo"
+        required
       />
       <!-- add_image_btn , antes tenía este id-->
       <div
@@ -58,6 +57,7 @@
       id="email"
       name="email"
       placeholder="Ej: sally-hill@gmail.com"
+      required
     />
 
     <label class="complete__label" for="phone">Teléfono</label>
@@ -67,6 +67,7 @@
       id="phone"
       name="number"
       placeholder="Ej: 555-55-55-55"
+      required
     />
 
     <label class="complete__label" for="linkedin">Linkedin</label>
@@ -76,6 +77,7 @@
       id="linkedin"
       name="linkedin"
       placeholder="Ej: linkedin.com/in/sally.hill"
+      required
     />
 
     <label class="complete__label" for="github">Github</label>
