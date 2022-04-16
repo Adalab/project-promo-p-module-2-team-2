@@ -250,8 +250,10 @@ btnReset.addEventListener('click', handleReset);
 
 const createButton = document.querySelector('.js_create_button'); //Botón de crear tarjeta
 const urlTwitter = document.querySelector('.js_url'); //URL twitter
-const shareButton = document.querySelector('.share__button--in'); //botón de compartir de twitter
+const buttonTwitter = document.querySelector('.share__button--in');
+//botón de compartir de twitter
 const feedBack = document.querySelector('.js_share__title--done'); //Frase que dice si se ha creado bien o no
+const buttonOrange = document.querySelector('.js_buttonOrange');
 
 function handleClickCreateButton(event) {
   event.preventDefault();
@@ -266,13 +268,11 @@ function handleClickCreateButton(event) {
       console.log('ESTO', serverResp);
 
       if (serverResp.success === false) {
-        feedBack.innerHTML = 'Falta algún dato del formulario';
-        // Mostrar un mensajito de error en la página
+        feedBack.innerHTML = 'Debe faltar algún dato del formulario...';
       } else {
-        // El servidor ha aceptado los datos.
-        // Mostrar la dirección que está en serverResp.cardURL y el botón de Tw.
+        buttonOrange.classList.add('buttonOrange');
         console.log('001');
-        feedBack.innerHTML = 'La tarjeta ha sido creada:';
+        feedBack.innerHTML = 'Aquí tienes tu tarjeta:';
         console.log('002');
         urlTwitter.innerHTML = serverResp.cardURL;
         console.log('003');
@@ -280,7 +280,6 @@ function handleClickCreateButton(event) {
         console.log('004');
       }
     });
-  shareButton.remove('hidden');
 }
 
 function shareOnTwitter(event) {
@@ -291,9 +290,8 @@ function shareOnTwitter(event) {
 }
 
 createButton.addEventListener('click', handleClickCreateButton);
-shareButton.addEventListener('click ', shareOnTwitter);
+buttonTwitter.addEventListener('click', shareOnTwitter);
 
-//
 //
 //
 //

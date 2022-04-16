@@ -6,18 +6,20 @@
   </legend>
 
   <div class="share__div js_share_form collapsed">
-    <button type="button" class="share__button js_create_button">
+    <button
+      type="button"
+      class="share__button js_create_button js_buttonOrange"
+    >
       <i class="fa-solid fa-address-card share__card"></i>Crear tarjeta
     </button>
+
     <div class="share__div--title">
       <!-- En este h3, sale la frase de creada tarjeta o error -->
-      <h3 class="js_share__title--done"></h3>
+      <h3 class="js_share__title--done share__title--done"></h3>
       <!-- Aquí va la url creada -->
-      <a class="share__link js_url" href=""></a>
-      <button type="button" class="share__button--in">
-        <!-- El hidden se quita cuando se crea la tarjeta bien -->
-        <i class="fa-brands fa-twitter share__twi hidden"></i>Compartir en
-        twitter
+      <a target="blank" class="share__link js_url" href=""></a>
+      <button type="button" class="share__button--in js_shareButtonTwitter">
+        <i class="fa-brands fa-twitter share__twi"></i>Compartir en twitter
       </button>
     </div>
   </div>
