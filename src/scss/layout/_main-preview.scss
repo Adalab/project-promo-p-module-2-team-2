@@ -31,6 +31,13 @@
     padding: 10rem 15rem;
     @media all and (min-width: $break_point_tablet) {
       transform: translateY(-30rem);
+      transition: 300ms;
+    }
+    &:hover {
+      cursor: pointer;
+      color: $col_brownish_grey;
+      background-color: $col_brownish_grey_03;
+      border: 1px solid $col_brownish_grey_05;
     }
   }
 }

@@ -15,6 +15,11 @@ const style_001 = document.querySelector('#style_001');
 const style_002 = document.querySelector('#style_002');
 const style_003 = document.querySelector('#style_003');
 
+// CONSTANTES PARA LAS IMÁGENES DE MINIATURA Y AVATAR DE LA TARJETA "PREVIEW".
+
+const profileImage = document.querySelector('.js__profile-image');
+const profilePreview = document.querySelector('.js__profile-preview');
+
 function openForm(legendId) {
   if (legendId === 'completeLegend') {
     completeForm.classList.toggle('collapsed');
@@ -132,15 +137,14 @@ style_003.addEventListener('click', changeColorStyle);
 //CONSTANTE DATA
 //En una misma variable creo un objeto que guarde todos los valores que la usuaria escriba, es útil para luego pasar todos esos datos al servidor.
 const data = {
+  palette: 1,
   name: '',
   job: '',
-  email: '',
   phone: '',
+  email: '',
   linkedin: '',
   github: '',
-  /*
   photo: '',
-  colores*/
 };
 
 const inputsForm = document.querySelector('.js_allInputs'); //PRIMER DIV DEBAJO DE SECTION INPUTS
@@ -164,6 +168,8 @@ function handleData(event) {
     data.linkedin = inputType.value;
   } else if (inputType.id === 'github') {
     data.github = inputType.value;
+  } else if (inputType.id === 'photo') {
+    data.photo = inputType.value;
   }
   previewUser(); //llamo a la función que me va cambiando el valor de la tarjeta preview, con lo que he ido guardando en el data
 }
@@ -195,3 +201,88 @@ function previewUser() {
 }
 
 inputsForm.addEventListener('keyup', handleData);
+
+// Reset button
+
+const btnReset = document.querySelector('.js-reset-btn');
+const inputName = document.querySelector('.js_name_input');
+const inputJob = document.querySelector('.js_ocupation_input');
+const inputEmail = document.querySelector('.js_input_email');
+const inputPhone = document.querySelector('.js_input_phone');
+const inputLinkedin = document.querySelector('.js_input_linkedin');
+const inputGithub = document.querySelector('.js_input_github');
+
+function resetPreview() {
+  // Resetea los valores del objeto a cadenas vacias.
+  (data.palette = 1), (data.name = '');
+  data.job = '';
+  data.email = '';
+  data.phone = '';
+  data.linkedin = '';
+  data.github = '';
+  (data.photo = ''),
+    // Resetea los valores del formurio a cadenas vacias.
+    (inputName.value = '');
+  inputJob.value = '';
+  inputEmail.value = '';
+  inputPhone.value = '';
+  inputLinkedin.value = '';
+  inputGithub.value = '';
+
+  // Resetea los valores por defecto de la tarjeta de vista previa.
+  realTimeName.innerHTML = 'Nombre y Apellidos';
+  realTimeOcupation.innerHTML = 'Profesión';
+}
+
+function handleReset(event) {
+  event.preventDefault();
+  resetPreview();
+  //previewUser();
+  profileImage.style.backgroundImage = '';
+  profilePreview.style.backgroundImage = '';
+}
+
+btnReset.addEventListener('click', handleReset);
+
+//TWITTER!!!!!!
+
+const createButton = document.querySelector('.js_create_button'); //Botón de crear tarjeta
+const urlTwitter = document.querySelector('.js_url'); //URL twitter
+const shareButton = document.querySelector('.share__button--in'); //botón de compartir de twitter
+const feedBack = document.querySelector('.js_share__title--done'); //Frase que dice si se ha creado bien o no
+
+function handleClickCreateButton(event) {
+  event.preventDefault();
+
+  fetch('https://awesome-profile-cards.herokuapp.com/card', {
+    method: 'POST',
+    header: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((serverResp) => {
+      console.log(serverResp);
+
+      if (serverResp.success === false) {
+        feedBack.innerHTML = 'Falta algún dato del formulario';
+        // Mostrar un mensajito de error en la página
+      } else {
+        // El servidor ha aceptado los datos.
+        // Mostrar la dirección que está en serverResp.cardURL y el botón de Tw.
+        feedBack.innerHTML = 'La tarjeta ha sido creada:';
+        urlTwitter.innerHTML = serverResp.cardURL;
+        urlTwitter.href = serverResp.cardURL;
+      }
+    });
+  shareButton.remove('hidden');
+}
+
+function shareOnTwitter(event) {
+  event.preventDefault();
+  console.log(urlTwitter.href);
+  let url = `https://twitter.com/intent/tweet?text=He%20creado%20una%20tarjeta%20profesional.%20Conóceme!%20&url=${urlTwitter.href}`;
+  window.location.href = url;
+}
+
+createButton.addEventListener('click', handleClickCreateButton);
+shareButton.addEventListener('click ', shareOnTwitter);
