@@ -341,12 +341,8 @@ function shareOnTwitter(event) {
 }
 
 createButton.addEventListener('click', handleClickCreateButton);
-<<<<<<< HEAD
 buttonTwitter.addEventListener('click', shareOnTwitter);
 
 //
 // localStrorage
 //
-=======
-shareButton.addEventListener('click ', shareOnTwitter);
->>>>>>> dev
