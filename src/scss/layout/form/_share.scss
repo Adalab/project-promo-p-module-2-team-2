@@ -42,9 +42,6 @@
   }
 
   &__button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin: 10rem 0 30rem 10rem;
     width: 199rem;
     height: 50rem;
@@ -55,8 +52,12 @@
     text-transform: uppercase;
     border-radius: 12rem;
     border-color: $col_white;
-    background-color: $col_white_five;
+    background-color:$col_dull_orange;
     box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__card {
@@ -70,6 +71,9 @@
   }
   &__div--title {
     border-top: 1rem solid $col_grayline;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   &__title--done {
     color: $col_gunmetal;
@@ -78,6 +82,7 @@
     font-size: 18rem;
     text-align: center;
     margin: 20rem 0 5rem 0;
+    padding-bottom: 30px;
   }
 
   &__link {
@@ -104,6 +109,10 @@
     gap: 10rem;
     align-items: center;
     justify-content: center;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__share__twi {
@@ -114,4 +123,8 @@
 
 .hidden {
   display: none;
+}
+
+.buttonOrange {
+  background-color: $col_white_five;
 }
