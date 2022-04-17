@@ -311,6 +311,7 @@ const feedBack = document.querySelector('.js_share__title--done'); //Frase que d
 
 function handleClickCreateButton(event) {
   event.preventDefault();
+  feedBack.innerHTML = '';
 
   fetch('https://awesome-profile-cards.herokuapp.com/card', {
     method: 'POST',
