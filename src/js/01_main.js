@@ -314,6 +314,9 @@ const buttonOrange = document.querySelector('.js_buttonOrange');
 function handleClickCreateButton(event) {
   event.preventDefault();
 
+  // Guardara en localStorage.
+  setLocalStorage();
+
   fetch('https://awesome-profile-cards.herokuapp.com/card', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -344,5 +347,48 @@ createButton.addEventListener('click', handleClickCreateButton);
 buttonTwitter.addEventListener('click', shareOnTwitter);
 
 //
-// localStrorage
+// LOCALSTORAGE
 //
+//
+// Añade el objeto "data" a localStorage.
+//
+function setLocalStorage() {
+  console.log('Entra en setLocalStorage 1');
+  // Convierto a "string" el objeto data.
+  const locStoData = JSON.stringify(data);
+  localStorage.setItem('localData', locStoData);
+  console.log('Entra en setLocalStorage 2', locStoData);
+}
+
+//
+// Obtiene la información del objeto "data" de localStorage.
+//
+function getLocalStorage() {
+  console.log('Entra en getLocalStorage', getLocalStorage);
+  let locStoData = localStorage.getItem('localData');
+
+  if (locStoData === null) {
+    locStoData = [];
+  } else {
+    const parseLocStoData = JSON.parse(locStoData);
+    data = parseLocStoData;
+  }
+
+  inputName.value = data.name;
+  inputJob.value = data.job;
+  inputEmail.value = data.email;
+  inputPhone.value = data.phone;
+  inputLinkedin.value = data.linkedin;
+  inputGithub.value = data.github;
+  profileImage.style.backgroundImage = `url(${data.photo})`;
+  profilePreview.style.backgroundImage = `url(${data.photo})`;
+
+  realTimeName.innerHTML = data.name;
+  realTimeOcupation.innerHTML = data.job;
+  emailIcon.href = `mailto:${data.email}`;
+  phoneIcon.href = `tel:${data.phone}`;
+  linkedinIcon.href = data.linkedin;
+  githubIcon.href = data.github;
+}
+
+getLocalStorage();
