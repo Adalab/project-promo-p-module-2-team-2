@@ -52,7 +52,7 @@
     text-transform: uppercase;
     border-radius: 12rem;
     border-color: $col_white;
-    background-color:$col_dull_orange;
+    background-color: $col_dull_orange;
     box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
 
     &:hover {
@@ -68,6 +68,9 @@
     border-top: 1rem;
     margin-bottom: 20rem;
     border-bottom: 1rem solid $col_grayline;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   &__div--title {
     border-top: 1rem solid $col_grayline;
@@ -86,14 +89,13 @@
   }
 
   &__link {
-    display: flex;
-    justify-content: center;
     text-decoration: none;
     color: $col_dull_orange;
     font-family: $font_open;
     font-weight: $font_w_semibold;
     font-size: 12rem;
     margin-bottom: 12rem;
+    text-align: center;
   }
 
   &__button--in {
