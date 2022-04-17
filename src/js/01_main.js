@@ -306,12 +306,17 @@ function errorMessage(inputClass, messages) {
 
 const createButton = document.querySelector('.js_create_button'); //Botón de crear tarjeta
 const urlTwitter = document.querySelector('.js_url'); //URL twitter
-const shareButton = document.querySelector('.share__button--in'); //botón de compartir de twitter
+const buttonTwitter = document.querySelector('.share__button--in');
+//botón de compartir de twitter
 const feedBack = document.querySelector('.js_share__title--done'); //Frase que dice si se ha creado bien o no
+const buttonOrange = document.querySelector('.js_buttonOrange');
 
 function handleClickCreateButton(event) {
   event.preventDefault();
   feedBack.innerHTML = '';
+
+  // Guardara en localStorage.
+  setLocalStorage();
 
   fetch('https://awesome-profile-cards.herokuapp.com/card', {
     method: 'POST',
@@ -321,17 +326,16 @@ function handleClickCreateButton(event) {
     .then((response) => response.json())
     .then((serverResp) => {
       if (serverResp.success === false) {
-        feedBack.innerHTML = 'Falta algún dato del formulario';
-        // Mostrar un mensajito de error en la página
+        feedBack.innerHTML = 'Debe faltar algún dato del formulario...';
       } else {
-        // El servidor ha aceptado los datos.
-        // Mostrar la dirección que está en serverResp.cardURL y el botón de Tw.
-        feedBack.innerHTML = 'La tarjeta ha sido creada:';
+        buttonOrange.classList.add('buttonOrange');
+        console.log('001');
+        feedBack.innerHTML = 'Aquí tienes tu tarjeta:';
+        console.log('002');
         urlTwitter.innerHTML = serverResp.cardURL;
         urlTwitter.href = serverResp.cardURL;
       }
     });
-  shareButton.remove('hidden');
 }
 
 function shareOnTwitter(event) {
@@ -341,4 +345,51 @@ function shareOnTwitter(event) {
 }
 
 createButton.addEventListener('click', handleClickCreateButton);
-shareButton.addEventListener('click ', shareOnTwitter);
+buttonTwitter.addEventListener('click', shareOnTwitter);
+
+//
+// LOCALSTORAGE
+//
+//
+// Añade el objeto "data" a localStorage.
+//
+function setLocalStorage() {
+  console.log('Entra en setLocalStorage 1');
+  // Convierto a "string" el objeto data.
+  const locStoData = JSON.stringify(data);
+  localStorage.setItem('localData', locStoData);
+  console.log('Entra en setLocalStorage 2', locStoData);
+}
+
+//
+// Obtiene la información del objeto "data" de localStorage.
+//
+function getLocalStorage() {
+  console.log('Entra en getLocalStorage', getLocalStorage);
+  let locStoData = localStorage.getItem('localData');
+
+  if (locStoData === null) {
+    locStoData = [];
+  } else {
+    const parseLocStoData = JSON.parse(locStoData);
+    data = parseLocStoData;
+  }
+
+  inputName.value = data.name;
+  inputJob.value = data.job;
+  inputEmail.value = data.email;
+  inputPhone.value = data.phone;
+  inputLinkedin.value = data.linkedin;
+  inputGithub.value = data.github;
+  profileImage.style.backgroundImage = `url(${data.photo})`;
+  profilePreview.style.backgroundImage = `url(${data.photo})`;
+
+  realTimeName.innerHTML = data.name;
+  realTimeOcupation.innerHTML = data.job;
+  emailIcon.href = `mailto:${data.email}`;
+  phoneIcon.href = `tel:${data.phone}`;
+  linkedinIcon.href = data.linkedin;
+  githubIcon.href = data.github;
+}
+
+getLocalStorage();
