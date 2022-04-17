@@ -246,6 +246,62 @@ function handleReset(event) {
 
 btnReset.addEventListener('click', handleReset);
 
+//FORM
+
+const name = document.getElementById('name');
+const job = document.getElementById('job');
+const email = document.getElementById('email');
+const phone = document.getElementById('phone');
+const linkedin = document.getElementById('linkedin');
+const github = document.getElementById('github');
+const listInputs = document.querySelectorAll('.js__inputs');
+
+const form = document.querySelector('.js__form');
+form.addEventListener('keyup', (e) => {
+  e.preventDefault();
+  validationForm();
+});
+
+function validationForm() {
+  let rexEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+
+  listInputs.forEach((element) => {
+    element.lastElementChild.innerHTML = '';
+  });
+
+  if (name.value.length < 1 || name.value.trim() === '') {
+    errorMessage('name', 'Por favor ingresa un nombre valido');
+  }
+  if (job.value.length < 1 || job.value.trim() === '') {
+    errorMessage('job', 'Por favor ingresa un puesto valido');
+  }
+  if (
+    email.value.length < 1 ||
+    email.value.trim() === '' ||
+    !rexEmail.test(email.value)
+  ) {
+    errorMessage('email', 'Por favor ingresa un email valido');
+  }
+  if (
+    phone.value.length < 9 ||
+    phone.value.trim() === '' ||
+    isNaN(phone.value)
+  ) {
+    errorMessage('phone', 'Por favor ingresa un teléfono valido');
+  }
+  if (linkedin.value.length < 1 || linkedin.value.trim() === '') {
+    errorMessage('linkedin', 'Por favor ingresa una cuenta valida');
+  }
+  if (github.value.length < 1 || github.value.trim() === '') {
+    errorMessage('github', 'Por favor ingresa una cuenta valida');
+  }
+}
+
+function errorMessage(inputClass, messages) {
+  let element = document.querySelector(`.${inputClass}`);
+  element.lastElementChild.innerHTML = messages;
+}
+
 //TWITTER!!!!!!
 
 const createButton = document.querySelector('.js_create_button'); //Botón de crear tarjeta
@@ -265,8 +321,6 @@ function handleClickCreateButton(event) {
   })
     .then((response) => response.json())
     .then((serverResp) => {
-      console.log('ESTO', serverResp);
-
       if (serverResp.success === false) {
         feedBack.innerHTML = 'Debe faltar algún dato del formulario...';
       } else {
@@ -275,23 +329,24 @@ function handleClickCreateButton(event) {
         feedBack.innerHTML = 'Aquí tienes tu tarjeta:';
         console.log('002');
         urlTwitter.innerHTML = serverResp.cardURL;
-        console.log('003');
         urlTwitter.href = serverResp.cardURL;
-        console.log('004');
       }
     });
 }
 
 function shareOnTwitter(event) {
   event.preventDefault();
-  console.log(urlTwitter.href);
   let url = `https://twitter.com/intent/tweet?text=He%20creado%20una%20tarjeta%20profesional.%20¡Conóceme!%20&url=${urlTwitter.href}`;
   window.location.href = url;
 }
 
 createButton.addEventListener('click', handleClickCreateButton);
+<<<<<<< HEAD
 buttonTwitter.addEventListener('click', shareOnTwitter);
 
 //
 // localStrorage
 //
+=======
+shareButton.addEventListener('click ', shareOnTwitter);
+>>>>>>> dev
