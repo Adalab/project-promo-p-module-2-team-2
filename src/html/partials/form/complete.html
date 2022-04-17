@@ -12,24 +12,28 @@
   <!----------------SECTION INPUTS------------------>
 
   <div class="complete__form js_complete_form collapsed js_allInputs">
-    <label class="complete__label" for="name">Nombre completo</label>
-    <input
-      class="complete__input js_name_input"
-      type="text"
-      id="name"
-      name="name"
-      placeholder="Ej: Sally Jill"
-    />
-
-    <label class="complete__label" for="job">Puesto</label>
-    <input
-      class="complete__input js_ocupation_input"
-      type="text"
-      id="job"
-      name="job"
-      placeholder="Ej: Front-end unicorn"
-    />
-
+    <div class="div__complete name js__inputs">
+      <label class="complete__label" for="name">Nombre completo</label>
+      <input
+        class="complete__input js_name_input"
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Ej: Sally Jill"
+      />
+      <p class="error__message"></p>
+    </div>
+    <div class="div__complete job js__inputs">
+      <label class="complete__label" for="job">Puesto</label>
+      <input
+        class="complete__input js_ocupation_input"
+        type="text"
+        id="job"
+        name="job"
+        placeholder="Ej: Front-end unicorn"
+      />
+      <p class="error__message"></p>
+    </div>
     <label class="complete__label" for="photo">Imagen de perfil</label>
 
     <!-- PARTE AÑADIR IMAGEN / EN FUTURO USAR LIBRERÍA-->
@@ -41,7 +45,6 @@
         type="file"
         name=""
         id="photo"
-        required
       />
       <!-- add_image_btn , antes tenía este id-->
       <div
@@ -49,44 +52,50 @@
       ></div>
     </div>
     <!--------------FIN AÑADIR IMAGEN------------>
-
-    <label class="complete__label" for="email">Email</label>
-    <input
-      class="complete__input js_input_email"
-      type="email"
-      id="email"
-      name="email"
-      placeholder="Ej: sally-hill@gmail.com"
-      required
-    />
-
-    <label class="complete__label" for="phone">Teléfono</label>
-    <input
-      class="complete__input js_input_phone"
-      type="tel"
-      id="phone"
-      name="number"
-      placeholder="Ej: 555-55-55-55"
-      required
-    />
-
-    <label class="complete__label" for="linkedin">Linkedin</label>
-    <input
-      class="complete__input js_input_linkedin"
-      type="text"
-      id="linkedin"
-      name="linkedin"
-      placeholder="Ej: linkedin.com/in/sally.hill"
-      required
-    />
-
-    <label class="complete__label" for="github">Github</label>
-    <input
-      class="complete__input js_input_github"
-      type="text"
-      id="github"
-      name="github"
-      placeholder="Ej: @sally-hill"
-    />
+    <div class="div__complete email js__inputs">
+      <label class="complete__label" for="email">Email</label>
+      <input
+        class="complete__input js_input_email"
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Ej: sally-hill@gmail.com"
+        required="required"
+      />
+      <p class="error__message"></p>
+    </div>
+    <div class="div__complete phone js__inputs">
+      <label class="complete__label" for="phone">Teléfono</label>
+      <input
+        class="complete__input js_input_phone"
+        type="tel"
+        id="phone"
+        name="number"
+        placeholder="Ej: 555-55-55-55"
+      />
+      <p class="error__message"></p>
+    </div>
+    <div class="div__complete linkedin js__inputs">
+      <label class="complete__label" for="linkedin">Linkedin</label>
+      <input
+        class="complete__input js_input_linkedin"
+        type="text"
+        id="linkedin"
+        name="linkedin"
+        placeholder="Ej: linkedin.com/in/sally.hill"
+      />
+      <p class="error__message"></p>
+    </div>
+    <div class="div__complete github js__inputs">
+      <label class="complete__label" for="github">Github</label>
+      <input
+        class="complete__input js_input_github"
+        type="text"
+        id="github"
+        name="github"
+        placeholder="Ej: @sally-hill"
+      />
+      <p class="error__message"></p>
+    </div>
   </div>
 </fieldset>
