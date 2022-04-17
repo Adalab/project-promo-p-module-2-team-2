@@ -263,6 +263,7 @@ form.addEventListener('keyup', (e) => {
 });
 
 function validationForm() {
+  let rexName = / ^ [a-zA-Z] + [a-zA-Z] + $ /;
   let rexEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
   listInputs.forEach((element) => {
@@ -270,30 +271,60 @@ function validationForm() {
   });
 
   if (name.value.length < 1 || name.value.trim() === '') {
+    name.classList.add('wrong');
+    name.classList.remove('right');
     errorMessage('name', 'Por favor ingresa un nombre valido');
+  } else {
+    name.classList.remove('wrong');
+    name.classList.add('right');
   }
   if (job.value.length < 1 || job.value.trim() === '') {
+    job.classList.add('wrong');
+    job.classList.remove('right');
     errorMessage('job', 'Por favor ingresa un puesto valido');
+  } else {
+    job.classList.remove('wrong');
+    job.classList.add('right');
   }
   if (
     email.value.length < 1 ||
     email.value.trim() === '' ||
     !rexEmail.test(email.value)
   ) {
+    email.classList.add('wrong');
+    email.classList.remove('right');
     errorMessage('email', 'Por favor ingresa un email valido');
+  } else {
+    email.classList.remove('wrong');
+    email.classList.add('right');
   }
   if (
     phone.value.length < 9 ||
     phone.value.trim() === '' ||
     isNaN(phone.value)
   ) {
+    phone.classList.add('wrong');
+    phone.classList.remove('right');
     errorMessage('phone', 'Por favor ingresa un teléfono valido');
+  } else {
+    phone.classList.remove('wrong');
+    phone.classList.add('right');
   }
   if (linkedin.value.length < 1 || linkedin.value.trim() === '') {
+    linkedin.classList.add('wrong');
+    linkedin.classList.remove('right');
     errorMessage('linkedin', 'Por favor ingresa una cuenta valida');
+  } else {
+    linkedin.classList.remove('wrong');
+    linkedin.classList.add('right');
   }
   if (github.value.length < 1 || github.value.trim() === '') {
+    github.classList.add('wrong');
+    github.classList.remove('right');
     errorMessage('github', 'Por favor ingresa una cuenta valida');
+  } else {
+    github.classList.remove('wrong');
+    github.classList.add('right');
   }
 }
 

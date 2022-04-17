@@ -93,8 +93,16 @@
 }
 .error__message {
   font-family: $font_open;
-  font-size: 14rem;
+  font-size: 12rem;
   font-weight: bold;
   color: $col_rusty_red;
   margin-bottom: 20rem;
+}
+
+.wrong {
+  border: 1rem solid $col_rusty_red;
+}
+
+.right {
+  border: 1rem solid #a2deaf;
 }
