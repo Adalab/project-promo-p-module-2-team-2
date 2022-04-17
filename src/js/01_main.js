@@ -294,14 +294,5 @@ createButton.addEventListener('click', handleClickCreateButton);
 shareButton.addEventListener('click ', shareOnTwitter);
 
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// localStrorage
 //
