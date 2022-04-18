@@ -403,23 +403,23 @@ function getLocalStorage() {
   } else {
     const parseLocStoData = JSON.parse(locStoData);
     data = parseLocStoData;
+
+    inputName.value = data.name;
+    inputJob.value = data.job;
+    inputEmail.value = data.email;
+    inputPhone.value = data.phone;
+    inputLinkedin.value = data.linkedin;
+    inputGithub.value = data.github;
+    profileImage.style.backgroundImage = `url(${data.photo})`;
+    profilePreview.style.backgroundImage = `url(${data.photo})`;
+
+    realTimeName.innerHTML = data.name;
+    realTimeOcupation.innerHTML = data.job;
+    emailIcon.href = `mailto:${data.email}`;
+    phoneIcon.href = `tel:${data.phone}`;
+    linkedinIcon.href = data.linkedin;
+    githubIcon.href = data.github;
   }
-
-  inputName.value = data.name;
-  inputJob.value = data.job;
-  inputEmail.value = data.email;
-  inputPhone.value = data.phone;
-  inputLinkedin.value = data.linkedin;
-  inputGithub.value = data.github;
-  profileImage.style.backgroundImage = `url(${data.photo})`;
-  profilePreview.style.backgroundImage = `url(${data.photo})`;
-
-  realTimeName.innerHTML = data.name;
-  realTimeOcupation.innerHTML = data.job;
-  emailIcon.href = `mailto:${data.email}`;
-  phoneIcon.href = `tel:${data.phone}`;
-  linkedinIcon.href = data.linkedin;
-  githubIcon.href = data.github;
 }
 
 getLocalStorage();
